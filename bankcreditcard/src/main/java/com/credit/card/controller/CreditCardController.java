@@ -8,7 +8,6 @@ import com.credit.card.service.CreditCardService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
@@ -27,7 +26,7 @@ public class CreditCardController {
     @Resource
     private CreditCardService creditCardService;
 
-    @GetMapping("/")
+    @GetMapping()
     public Flux<CreditCard> findAllCreditCard(){
         LOGGER.debug("Getting Credit Card!");
         return creditCardService.findAllCreditCard();
@@ -39,10 +38,9 @@ public class CreditCardController {
         return creditCardService.findByIdCreditCard(id);
     }
 
-    @PostMapping("/")
+    @PostMapping("/create")
     public Mono<CreditCard> saveCreditCard(@RequestBody CreditCard creditCard){
         LOGGER.debug("Saving credit card!");
-
         return creditCardService.saveCreditCard(creditCard);
     }
 

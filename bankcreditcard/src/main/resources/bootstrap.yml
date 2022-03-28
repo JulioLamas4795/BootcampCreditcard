@@ -4,7 +4,7 @@ spring:
     name: bankcreditcard-microservice
   cloud:
     config:
-      uri: http://localhost:8081
+      uri: http://192.168.254.79:8081
       username: develop
       password: develop
   profiles:
