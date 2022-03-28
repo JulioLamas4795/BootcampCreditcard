@@ -89,7 +89,7 @@ class CreditCardControllerTest {
     }
 
     @Test
-    public void deleteClientIdTest(){
+    public void deleteCreditCardIdTest(){
         given(cardService.deleteByIdCreditCard(any())).willReturn(Mono.empty());
         webTestClient.delete().uri("/api/creditcard/1")
                 .exchange()
