@@ -11,6 +11,6 @@ import reactor.core.publisher.Mono;
 @Configuration
 public interface CreditCardRepository extends ReactiveMongoRepository<CreditCard, String> {
     CreditCard findCreditCardByIdClient(String idClient);
-    Flux<CreditCard> findAllByIdClient(String idClient);
+    Flux<CreditCard> findByIdClient(String idClient);
 }
 

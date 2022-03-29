@@ -11,6 +11,7 @@ public interface CreditCardService {
 
     public Flux<CreditCard> findAllCreditCard();
     public Mono<CreditCard> findByIdCreditCard(String id);
+    public Flux<CreditCard> findByIdClient(String idClient);
     public Mono<CreditCard> saveCreditCard(CreditCard creditCard);
     public Mono<CreditCardDto> updateCreditCard(Mono<CreditCardDto> creditCardMono, String id);
     public Mono<Void> deleteByIdCreditCard(String id);

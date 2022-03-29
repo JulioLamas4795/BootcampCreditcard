@@ -38,6 +38,11 @@ public class CreditCardController {
         return creditCardService.findByIdCreditCard(id);
     }
 
+    @GetMapping("/client/{idClient}")
+    public Flux<CreditCard> findByIdClient(@PathVariable String idClient){
+        return creditCardService.findByIdClient(idClient);
+    }
+
     @PostMapping("/create")
     public Mono<CreditCard> saveCreditCard(@RequestBody CreditCard creditCard){
         LOGGER.debug("Saving credit card!");

@@ -31,6 +31,10 @@ public class CreditCardServiceImpl implements CreditCardService{
         return creditCardRepository.findById(id);
     }
 
+    public Flux<CreditCard> findByIdClient(String idClient){
+        return creditCardRepository.findByIdClient(idClient);
+    }
+
     public Mono<CreditCard> saveCreditCard(CreditCard creditCardMono) {
         return creditCardRepository.save(creditCardMono);
     }
